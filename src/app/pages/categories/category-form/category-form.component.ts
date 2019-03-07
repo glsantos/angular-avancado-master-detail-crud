@@ -104,7 +104,6 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
   }
 
 
-
   private createCategory() {
 
     // atribuindo valores do formulário em um objeto novo(uma constante)
@@ -150,7 +149,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
       this.serverErrorMessages = JSON.parse(error._body).errors;
     }else {
 
-      this.serverErrorMessages = ["Falha na comunicação com o servidor. Por favor, teste mais tarde."];
+      this.serverErrorMessages = ["Falha na comunicação com o servidor. Por favor, tente mais tarde."];
     }
   }
 
