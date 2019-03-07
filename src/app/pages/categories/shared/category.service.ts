@@ -41,9 +41,9 @@ export class CategoryService {
     )
   }
 
-  update(category, Category): Observable<Category> {
-    
+  update(category: Category): Observable<Category> {
     const url = `${this.apiPath}/${category.id}`;
+
     return this.http.put(url, category).pipe(
       catchError(this.handleError),
       map(() => category)
@@ -51,8 +51,8 @@ export class CategoryService {
   }
 
   delete(id: number): Observable<any> {
-
     const url = `${this.apiPath}/${id}`;
+
     return this.http.delete(url).pipe(
       catchError(this.handleError),
       map(() => null)
@@ -63,6 +63,7 @@ export class CategoryService {
   
   private jsonDataToCategories(jsonData: any[]): Category[] {
     const categories: Category[] = [];
+    
     jsonData.forEach(element => categories.push(element as Category));
     return categories;
   }
