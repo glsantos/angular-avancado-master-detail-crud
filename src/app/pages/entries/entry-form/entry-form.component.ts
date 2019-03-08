@@ -155,7 +155,6 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
     }
   }
 
-
   private createEntry() {
 
     // atribuindo valores do formulário em um objeto novo(uma constante)
