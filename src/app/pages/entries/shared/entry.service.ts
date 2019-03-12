@@ -19,8 +19,8 @@ export class EntryService extends BaseResourceService<Entry> {
   create(entry: Entry): Observable<Entry> {
 
     return this.categoryService.getById(entry.categoryId).pipe(
-      flatMap(category => {
 
+      flatMap(category => {
         entry.category = category;
 
         // Chamando o Create do Module BaseResource
@@ -32,8 +32,8 @@ export class EntryService extends BaseResourceService<Entry> {
   update(entry: Entry): Observable<Entry> {
     
     return this.categoryService.getById(entry.categoryId).pipe(
-      flatMap(category => {
 
+      flatMap(category => {
         entry.category = category;
 
         // Chamando o Update do Module BaseResource
