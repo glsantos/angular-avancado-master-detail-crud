@@ -13,7 +13,7 @@ import { Entry } from "./entry.model";
 export class EntryService extends BaseResourceService<Entry> {
 
   constructor(protected injector: Injector, private categoryService: CategoryService) {
-    super("api/entries", injector);
+    super("api/entries", injector, Entry.fromJson);
   }
 
   create(entry: Entry): Observable<Entry> {
@@ -40,21 +40,5 @@ export class EntryService extends BaseResourceService<Entry> {
         return super.update(entry);
       })
     )
-  }
-
-  protected jsonDataToResources(jsonData: any[]): Entry[] {
-    
-    const entries: Entry[] = [];
-
-    jsonData.forEach(element => {
-      const entry = Object.assign(new Entry(), element);
-      entries.push(entry);
-    });
-
-    return entries;
-  }
-
-  protected jsonDataToResource(jsonData: any): Entry {
-    return Object.assign(new Entry(), jsonData);
   }
 }
