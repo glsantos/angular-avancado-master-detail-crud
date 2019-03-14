@@ -25,8 +25,10 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
   category: Category = new Category();
 
   constructor(
-    private categoryService: CategoryService, private route: ActivatedRoute, 
-    private router: Router, private formBuilder: FormBuilder) { }
+    private categoryService: CategoryService, 
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
 
