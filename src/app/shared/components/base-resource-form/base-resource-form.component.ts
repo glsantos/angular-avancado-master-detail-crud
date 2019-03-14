@@ -111,7 +111,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
         this.resourceService.create(resource)
             .subscribe(
-                category => this.actionsForSuccess(resource),
+                resource => this.actionsForSuccess(resource),
                 error => this.actionsForError(error)
             )
     }
