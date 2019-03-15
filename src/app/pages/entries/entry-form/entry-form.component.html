@@ -25,6 +25,8 @@
           <select name="type" id="type" formControlName="type" class="form-control">
             <option *ngFor="let option of typeOptions" [value]="option.value">{{ option.text }}</option>
           </select>
+
+          <app-form-field-error [form-control]=""></app-form-field-error>
           
           <div class="text-danger" *ngIf="resourceForm.get('type').invalid && resourceForm.get('type').touched">
             <div *ngIf="resourceForm.get('type').errors.required">dado obrigatório</div>
