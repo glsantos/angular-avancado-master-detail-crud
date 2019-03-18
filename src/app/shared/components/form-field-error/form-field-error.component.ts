@@ -19,7 +19,7 @@ export class FormFieldErrorComponent implements OnInit {
   ngOnInit() {
   }
 
-  public get ErrorMessage(): string | null {
+  public get errorMessage(): string | null {
 
     if( this.mustShowErrorMessage() ){
 
@@ -45,14 +45,14 @@ export class FormFieldErrorComponent implements OnInit {
       return "formato de email inválido";
     }else if (this.formControl.errors.minlength) {
 
-      const requiredLength = this.formControl.errors.maxlength.requiredLength;
-
-      return `deve ter no mínimo ${requiredLength} caracteres`;
-    }else if (this.formControl.errors.minlength) {
-
       const requiredLength = this.formControl.errors.minlength.requiredLength;
 
       return `deve ter no mínimo ${requiredLength} caracteres`;
+    }else if (this.formControl.errors.maxlength) {
+
+      const requiredLength = this.formControl.errors.maxlength.requiredLength;
+
+      return `deve ter no máximo ${requiredLength} caracteres`;
     }
   }
 }
